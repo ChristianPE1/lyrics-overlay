@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+:root {
+  --font-size-current: 22px;
+  --font-size-next: 14px;
+  --bg-opacity: 0.85;
+  --bg-color: rgba(15, 15, 15, 0.85);
+  --text-primary: rgb(255, 255, 255);
+  --accent-color: rgb(29, 185, 84);
+  --text-secondary: rgba(255, 255, 255, 0.5);
+  --control-hover: rgba(255, 255, 255, 0.1);
+  --border-color: rgba(255, 255, 255, 0.1);
+  --panel-bg: rgba(30, 30, 30, 0.98);
+  font-family: "Segoe UI", "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background: transparent;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease;
+}
+
+/* Custom scrollbar */
+.custom-scrollbar::-webkit-scrollbar { width: 6px; }
+.custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+.custom-scrollbar::-webkit-scrollbar-thumb { background: var(--border-color); border-radius: 3px; }
+.custom-scrollbar::-webkit-scrollbar-thumb:hover { background: var(--text-secondary); }
+
+/* Range input styling */
+input[type="range"] {
+  @apply w-full h-1 rounded appearance-none cursor-pointer;
+  background: var(--border-color);
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  @apply appearance-none w-3.5 h-3.5 rounded-full cursor-pointer transition-transform;
+  background: var(--accent-color);
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+}
+
+/* Color input styling */
+input[type="color"] {
+  @apply w-8 h-6 border rounded cursor-pointer p-0;
+  border-color: var(--border-color);
+  background: transparent;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper { padding: 2px; }
+input[type="color"]::-webkit-color-swatch { border: none; border-radius: 2px; }
+
+/* Checkbox styling */
+input[type="checkbox"] {
+  @apply w-3.5 h-3.5 cursor-pointer;
+  accent-color: var(--accent-color);
+}
