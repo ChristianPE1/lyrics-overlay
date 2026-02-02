@@ -51,5 +51,3 @@ Desktop.ini
 .env.local
 .env.*.local
 
-# Extension build artifacts (keep source, ignore generated icons)
-extension/*.png
