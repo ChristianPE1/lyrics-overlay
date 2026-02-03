@@ -6,8 +6,14 @@ Receives lyrics data via WebSocket from a browser extension.
 */
 
 import { useState, useCallback } from "react";
-import { ConnectionStatus, LyricsDisplay, SettingsPanel, SongInfo, WindowControls } from "./components";
-import { useSettings, useWebSocket, useWindowControls } from "./hooks";
+import ConnectionStatus from "./components/ConnectionStatus.jsx";
+import LyricsDisplay from "./components/LyricsDisplay.jsx";
+import SettingsPanel from "./components/SettingsPanel.jsx";
+import SongInfo from "./components/SongInfo.jsx";
+import WindowControls from "./components/WindowControls.jsx";
+import useSettings from "./hooks/useSettings.js";
+import useWebSocket from "./hooks/useWebSocket.js";
+import useWindowControls from "./hooks/useWindowControls.js";
 import { processLyrics } from "./utils/lyrics";
 
 function App() {
@@ -97,7 +103,8 @@ function App() {
 
   return (
     <div 
-      className="h-full w-full bg-[--bg-color] rounded-xl flex flex-col justify-center items-center py-3 px-5 cursor-grab active:cursor-grabbing select-none relative border border-[--border-color] shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
+      className="h-full w-full rounded-xl flex flex-col justify-center items-center py-3 px-5 cursor-grab active:cursor-grabbing select-none relative border border-[--border-color] shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
+      style={{ backgroundColor: 'var(--bg-color)' }}
       onMouseDown={startDrag}
     >
       <ConnectionStatus isConnected={isConnected} />

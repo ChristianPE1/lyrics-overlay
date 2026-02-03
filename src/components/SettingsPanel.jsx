@@ -13,11 +13,12 @@ export default function SettingsPanel({
 
   return (
     <div 
-      className="absolute top-8 right-2 left-2 bottom-2 bg-[--panel-bg] border border-[--border-color] rounded-lg shadow-2xl z-200 overflow-hidden cursor-default flex flex-col"
+      className="absolute top-8 right-2 left-2 bottom-2 border border-[--border-color] rounded-lg shadow-2xl z-200 overflow-hidden cursor-default flex flex-col"
+      style={{ backgroundColor: 'var(--panel-bg)' }}
       onMouseDown={(e) => e.stopPropagation()}
     >
       {/* Header */}
-      <div className="flex justify-between items-center px-3 py-2.5 border-b border-[--border-color] text-[13px] font-semibold text-[--text-primary]">
+      <div className="flex justify-between items-center px-3 py-2.5 border-b border-[--border-color] text-[13px] font-semibold" style={{ color: 'var(--text-primary)' }}>
         <span>Settings</span>
         <button 
           className="bg-transparent border-none text-[--text-secondary] cursor-pointer p-0.5 flex items-center justify-center rounded transition-all duration-200 hover:bg-[--control-hover] hover:text-[--text-primary]"
