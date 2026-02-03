@@ -54,7 +54,6 @@ input[type="range"]::-webkit-slider-thumb:hover {
 /* Color input styling */
 input[type="color"] {
   @apply w-8 h-6 border rounded cursor-pointer p-0;
-  border-color: var(--border-color);
   background: transparent;
 }
 
