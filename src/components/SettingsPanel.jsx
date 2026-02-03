@@ -21,7 +21,8 @@ export default function SettingsPanel({
       <div className="flex justify-between items-center px-3 py-2.5 border-b border-[--border-color] text-[13px] font-semibold" style={{ color: 'var(--text-primary)' }}>
         <span>Settings</span>
         <button 
-          className="bg-transparent border-none text-[--text-secondary] cursor-pointer p-0.5 flex items-center justify-center rounded transition-all duration-200 hover:bg-[--control-hover] hover:text-[--text-primary]"
+          className="bg-transparent border-none cursor-pointer p-0.5 flex items-center justify-center rounded transition-all duration-200 hover:bg-[--control-hover]"
+          style={{ color: 'var(--text-secondary)' }}
           onClick={onClose}
         >
           <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
@@ -34,7 +35,7 @@ export default function SettingsPanel({
       <div className="p-3 flex-1 overflow-y-auto custom-scrollbar space-y-3.5">
         {/* Font Size */}
         <div>
-          <label className="block text-[11px] text-[--text-secondary] mb-1.5">
+          <label className="block text-[11px] mb-1.5" style={{ color: 'var(--text-secondary)' }}>
             Font Size: {settings.fontSize}px
           </label>
           <input 
@@ -48,7 +49,7 @@ export default function SettingsPanel({
 
         {/* Next Line Font Size */}
         <div>
-          <label className="block text-[11px] text-[--text-secondary] mb-1.5">
+          <label className="block text-[11px] mb-1.5" style={{ color: 'var(--text-secondary)' }}>
             Next Line Size: {settings.nextLineFontSize}px
           </label>
           <input 
@@ -62,7 +63,7 @@ export default function SettingsPanel({
 
         {/* Opacity */}
         <div>
-          <label className="block text-[11px] text-[--text-secondary] mb-1.5">
+          <label className="block text-[11px] mb-1.5" style={{ color: 'var(--text-secondary)' }}>
             Background Opacity: {Math.round(settings.opacity * 100)}%
           </label>
           <input 
@@ -76,7 +77,7 @@ export default function SettingsPanel({
 
         {/* Background Color */}
         <div className="flex items-center justify-between">
-          <label className="text-[11px] text-[--text-secondary]">Background Color</label>
+          <label className="text-[11px]" style={{ color: 'var(--text-secondary)' }}>Background Color</label>
           <input 
             type="color" 
             value={rgbToHex(settings.bgColor)}
@@ -89,7 +90,7 @@ export default function SettingsPanel({
 
         {/* Text Color */}
         <div className="flex items-center justify-between">
-          <label className="text-[11px] text-[--text-secondary]">Text Color</label>
+          <label className="text-[11px]" style={{ color: 'var(--text-secondary)' }}>Text Color</label>
           <input 
             type="color" 
             value={rgbToHex(settings.textColor)}
@@ -102,7 +103,7 @@ export default function SettingsPanel({
 
         {/* Accent Color */}
         <div className="flex items-center justify-between">
-          <label className="text-[11px] text-[--text-secondary]">Accent Color</label>
+          <label className="text-[11px]" style={{ color: 'var(--text-secondary)' }}>Accent Color</label>
           <input 
             type="color" 
             value={rgbToHex(settings.accentColor)}
@@ -121,16 +122,16 @@ export default function SettingsPanel({
               checked={settings.showRomanization}
               onChange={(e) => onUpdateSetting("showRomanization", e.target.checked)}
             />
-            <span className="text-xs text-[--text-primary]">Show romanization only</span>
+            <span className="text-xs" style={{ color: 'var(--text-primary)' }}>Show romanization only</span>
           </label>
-          <p className="text-[10px] text-[--text-secondary] mt-1 opacity-70">
+          <p className="text-[10px] mt-1 opacity-70" style={{ color: 'var(--text-secondary)' }}>
             Shows romanized text when available from BetterLyrics
           </p>
         </div>
 
         {/* Sync Offset */}
         <div>
-          <label className="block text-[11px] text-[--text-secondary] mb-1.5">
+          <label className="block text-[11px] mb-1.5" style={{ color: 'var(--text-secondary)' }}>
             Sync Offset: {syncOffset >= 0 ? "+" : ""}{syncOffset}ms
           </label>
           <div className="flex gap-1 mt-1.5">
@@ -140,7 +141,7 @@ export default function SettingsPanel({
             <button className={`${syncBtnBase} bg-[--border-color] hover:bg-[--accent-color]`} onClick={() => onAdjustSyncOffset(100)}>+0.1s</button>
             <button className={`${syncBtnBase} bg-[--border-color] hover:bg-[--accent-color]`} onClick={() => onAdjustSyncOffset(500)}>+0.5s</button>
           </div>
-          <p className="text-[10px] text-[--text-secondary] mt-1 opacity-70">Resets on next song</p>
+          <p className="text-[10px] mt-1 opacity-70" style={{ color: 'var(--text-secondary)' }}>Resets on next song</p>
         </div>
 
         {/* Reset All */}
