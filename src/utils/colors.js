@@ -41,4 +41,20 @@ export function applySettingsToCss(settings) {
       "--accent-color",
       `rgb(${settings.accentColor.r}, ${settings.accentColor.g}, ${settings.accentColor.b})`
    );
+   root.style.setProperty(
+      "--panel-bg",
+      `rgba(${settings.bgColor.r}, ${settings.bgColor.g}, ${settings.bgColor.b}, 0.98)`
+   );
+   root.style.setProperty(
+      "--text-secondary",
+      `rgba(${settings.textColor.r}, ${settings.textColor.g}, ${settings.textColor.b}, 0.5)`
+   );
+   root.style.setProperty(
+      "--control-hover",
+      `rgba(${settings.textColor.r}, ${settings.textColor.g}, ${settings.textColor.b}, 0.1)`
+   );
+   root.style.setProperty(
+      "--border-color",
+      `rgba(${settings.textColor.r}, ${settings.textColor.g}, ${settings.textColor.b}, 0.1)`
+   );
 }
