@@ -11,36 +11,6 @@ Thank you for your interest in contributing to Lyrics Overlay! This document pro
 - [Chrome](https://www.google.com/chrome/) or [Edge](https://www.microsoft.com/edge) browser
 - [BetterLyrics](https://better-lyrics.boidu.dev/) browser extension
 
-### Development Setup
-
-1. Fork and clone the repository
-2. Install dependencies:
-   ```bash
-   npm install
-   cd server && npm install && cd ..
-   ```
-3. Generate extension icons:
-   ```bash
-   node extension/create-icons.js
-   ```
-4. Load the extension in Chrome (see README.md)
-
-## Development Workflow
-
-### Running in Development Mode
-
-```bash
-# Start both server and Tauri app in development mode
-start-dev.bat
-
-# Or manually:
-# Terminal 1: Start the server
-cd server && npm start
-
-# Terminal 2: Start the Tauri app with hot reload
-npm run tauri dev
-```
-
 ### Project Structure Overview
 
 | Directory | Purpose |
@@ -50,13 +20,36 @@ npm run tauri dev
 | `server/` | WebSocket server that bridges extension and app |
 | `src-tauri/` | Tauri/Rust backend for the desktop app |
 
-### Making Changes
+### Development Setup
 
-1. Create a feature branch from `main`
-2. Make your changes
-3. Test with multiple languages (Japanese, Korean, Chinese, English)
-4. Ensure no console errors in browser or app
-5. Submit a pull request
+1. Fork and clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   cd server && npm install && cd ..
+   ```
+3. Load the extension in Chrome (see README.md)
+
+## Development Workflow
+
+### Running in Development Mode
+
+```bash
+# Terminal 1: Start the server
+cd server && npm start
+
+# Terminal 2: Start the Tauri app with hot reload
+npm run tauri dev
+```
+
+### Building
+To create a production build:
+
+```bash
+npm run tauri:build
+```
+
+The output will be in the `src-tauri/target/release/bundle/` directory.
 
 ## Code Guidelines
 
