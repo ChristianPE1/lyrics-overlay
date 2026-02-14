@@ -149,6 +149,13 @@ Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) for gu
 
 ## Troubleshooting
 
+### Connection issues
+
+- The server runs on port 9876
+- Make sure no firewall is blocking the connection
+- Try restarting both the server and the app
+- Ensure your AdBlocker (uBlock Origin, AdBlock Plus, Brave AdBlock, etc.) is **disabled** for `music.youtube.com`. Some privacy extensions block the WebSocket connection to `localhost`.
+
 ### Lyrics not appearing
 
 1. Make sure the server is running (`cd server && npm start`)
@@ -163,12 +170,6 @@ Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) for gu
 2. Enable "Show romanization" in Lyrics Overlay settings
 3. Make sure the song has romanization available
 4. If issues persist, send us a snippet of the lyrics from BetterLyrics along with the song name so we can review and fix it in the code
-
-### Connection issues
-
-- The server runs on port 9876
-- Make sure no firewall is blocking the connection
-- Try restarting both the server and the app
 
 ### Unsynced or Unavailable lyrics
 
